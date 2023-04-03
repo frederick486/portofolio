@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import PortfolioList from '../portfolioList/PortfolioList';
 import './portfolio.scss'
+import {v4 as uuidv4} from 'uuid'
+
 import {
   featuredPortfolio,
   webPortfolio,
@@ -71,12 +73,13 @@ export default function Portfolio() {
             active={selected === item.id}
             setSelected={setSelected}
             id={item.id}
+            key={uuidv4()} 
           />
         ))}
       </ul>
       <div className="container">
         {data.map((d) => (
-          <div className="item">
+          <div className="item" key={uuidv4()} >
             <img 
               src={d.img} 
               alt="" 

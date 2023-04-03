@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './works.scss'
+import {v4 as uuidv4} from 'uuid'
+
 
 export default function Works() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -44,7 +46,7 @@ export default function Works() {
     <div className='works' id='works'>
       <div className="slider" style={{ transform:`translateX(-${currentSlide * 100}vw)` }}>
         {data.map((d) => (
-          <div className="container">
+          <div className="container" key={uuidv4()} >
             <div className="item">
               <div className="left">
                 <div className="leftContainer">

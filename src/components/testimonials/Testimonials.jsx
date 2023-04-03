@@ -1,4 +1,6 @@
 import './testimonials.scss'
+import {v4 as uuidv4} from 'uuid'
+
 
 export default function Testimonials() {
 
@@ -41,7 +43,10 @@ export default function Testimonials() {
       <h1>Testimonials</h1>
       <div className="container">
         {data.map((d) => (
-          <div className={d.featured ? "card featured" : "card"}>
+          <div 
+            className={d.featured ? "card featured" : "card"}
+            key={uuidv4()} 
+          >
             <div className="top">
               <img src="assets/right-arrow.png" className='left' alt="" />
               <img 
